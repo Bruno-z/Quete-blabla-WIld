@@ -1,0 +1,17 @@
+<resources>
+    <string name="search_text">Rechercher</string>
+    <string name="app_name">BlaBlaWild</string>
+
+    <string name="textView_departure">Départ</string>
+    <string name="textView_destination">Destination</string>
+    <string name="textView_date">Date</string>
+    <string name="button">Rechercher un Itineraire</string>
+    <string name="button1">Rechercher</string>
+    <string name="editText_departure"></string>
+    <string name="editText_destination"></string>
+    <string name="editText_date"></string>
+    <string name="toast">Veuillez renseigner votre lieu de Depart ainsi que votre Destination</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="fleche1">==></string>
+
+</resources>
