@@ -5,8 +5,11 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
@@ -21,6 +24,9 @@ public class SearchItineraryActivity extends AppCompatActivity {
     EditText editText9;
     EditText editText10;
     Button button2;
+    public final static String EXTRA_OBJET = "donne";
+
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -39,20 +45,20 @@ public class SearchItineraryActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (editText8.length() != 0 && editText9.length() != 0) {
-
                     String Depart = editText8.getText().toString();
                     String Destination = editText9.getText().toString();
-                    Intent Resultat = new Intent(SearchItineraryActivity.this, ViewSearchItineraryResultsListActivity.class);
-                    Resultat.putExtra("Depart", Depart);
-                    Resultat.putExtra("Destination", Destination);
+                    String Date = editText10.getText().toString();
+                    SearchRequestModel objet =new SearchRequestModel(Depart, Destination, Date);
+                    Intent  Resultat = new Intent(SearchItineraryActivity.this, ViewSearchItineraryResultsListActivity.class);
 
+                    Resultat.putExtra( EXTRA_OBJET,objet);
                     startActivity(Resultat);
-
 
                 } else {
 
@@ -66,7 +72,40 @@ public class SearchItineraryActivity extends AppCompatActivity {
 
         });
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }

@@ -3,6 +3,9 @@ package wildcodeschool.blablawild;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
+
+import java.util.Date;
 
 public class ViewSearchItineraryResultsListActivity extends AppCompatActivity {
 
@@ -11,8 +14,14 @@ public class ViewSearchItineraryResultsListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_search_itinerary_results_list);
 
-        Intent resultat = getIntent();
-        setTitle(resultat.getStringExtra("Depart") +" "+ getString(R.string.fleche1) +" "+resultat.getStringExtra("Destination")  );
+
+
+        Intent Resultat = getIntent();
+        SearchRequestModel objet= Resultat.getParcelableExtra(SearchItineraryActivity.EXTRA_OBJET);
+
+        Toast.makeText(this, objet.getDate(), Toast.LENGTH_SHORT).show();
+
+
 
     }
 }
