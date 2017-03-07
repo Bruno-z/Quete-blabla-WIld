@@ -54,6 +54,7 @@ public class SearchItineraryActivity extends AppCompatActivity {
                     String Depart = editText8.getText().toString();
                     String Destination = editText9.getText().toString();
                     String Date = editText10.getText().toString();
+
                     SearchRequestModel objet =new SearchRequestModel(Depart, Destination, Date);
                     Intent  Resultat = new Intent(SearchItineraryActivity.this, ViewSearchItineraryResultsListActivity.class);
 

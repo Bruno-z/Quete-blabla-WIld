@@ -20,6 +20,7 @@ public class ViewSearchItineraryResultsListActivity extends AppCompatActivity {
         SearchRequestModel objet= Resultat.getParcelableExtra(SearchItineraryActivity.EXTRA_OBJET);
 
         Toast.makeText(this, objet.getDate(), Toast.LENGTH_SHORT).show();
+        this.setTitle(objet.getDepart()+" "+getString(R.string.fleche1)+" "+objet.getDestination());
 
 
 
