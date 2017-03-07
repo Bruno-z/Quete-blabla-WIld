@@ -13,5 +13,8 @@
     <string name="toast">Veuillez renseigner votre lieu de Depart ainsi que votre Destination</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="fleche1">==></string>
+    <string name="textView_Departure_Time">Departure_time</string>
+    <string name="textView__Price">Price</string>
+    <string name="textView_FirstName">First_Name</string>
 
 </resources>

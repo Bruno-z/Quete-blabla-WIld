@@ -11,4 +11,12 @@
     android:background="@color/colorLayout"
     tools:context="wildcodeschool.blablawild.ViewSearchItineraryResultsListActivity">
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/MaListe" />
 </RelativeLayout>
