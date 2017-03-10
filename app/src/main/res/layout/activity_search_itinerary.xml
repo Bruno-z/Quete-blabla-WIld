@@ -48,6 +48,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:text="@string/editText_date"
+        android:focusable="false"
         android:ems="10"
         android:layout_below="@+id/textView3"
         android:layout_alignRight="@+id/editText9"
