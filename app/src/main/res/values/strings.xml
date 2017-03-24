@@ -7,14 +7,21 @@
     <string name="textView_date">Date</string>
     <string name="button">Rechercher un Itineraire</string>
     <string name="button1">Rechercher</string>
-    <string name="editText_departure"></string>
-    <string name="editText_destination"></string>
-    <string name="editText_date"></string>
+    <string name="editTextDepart">Départ</string>
+    <string name="editTextDestination">Déstination</string>
+    <string name="editText_date">date1</string>
     <string name="toast">Veuillez renseigner votre lieu de Depart ainsi que votre Destination</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="fleche1">==></string>
     <string name="textView_Departure_Time">Departure_time</string>
     <string name="textView__Price">Price</string>
     <string name="textView_FirstName">First_Name</string>
+    <string name="textView_Price">Prix</string>
+    <string name="textView_Heure">Heure</string>
+    <string name="editText_Price">Prix</string>
+    <string name="editText_Heure">Heure</string>
+    <string name="buttonPublish">Publish</string>
+    <string name="ButtonItinary">Itiniraries</string>
+
 
 </resources>

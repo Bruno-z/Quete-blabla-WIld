@@ -10,4 +10,115 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="wildcodeschool.blablawild.SubmitItineraryActivity">
 
+    <TextView
+        android:text="@string/textView_departure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp"
+        android:id="@+id/textViewDepart" />
+
+    <TextView
+        android:text="@string/textView_Price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextDestination"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textViewPrice" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/editText_Price"
+        android:ems="10"
+        android:layout_below="@+id/textViewPrice"
+        android:layout_alignRight="@+id/editTextDestination"
+        android:layout_alignEnd="@+id/editTextDestination"
+        android:id="@+id/editTextPrice" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:hint="@string/editText_date"
+        android:ems="10"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/editTextPrice"
+        android:layout_alignEnd="@+id/editTextPrice"
+        android:id="@+id/editTextDate" />
+
+    <TextView
+        android:text="@string/textView_Heure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextDate"
+        android:layout_marginTop="11dp"
+        android:id="@+id/textViewHeure"
+        android:layout_alignRight="@+id/textViewDepart"
+        android:layout_alignEnd="@+id/textViewDepart" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:hint="@string/editText_Heure"
+        android:ems="10"
+        android:layout_below="@+id/textViewHeure"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/editTextHeure" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+       android:hint="@string/textView_departure"
+        android:ems="10"
+        android:id="@+id/editTextDepart"
+        android:layout_below="@+id/textViewDepart"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/textView_destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewDestination"
+        android:layout_below="@+id/editTextDepart"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/editTextDestination"
+        android:ems="10"
+        android:id="@+id/editTextDestination"
+        android:layout_below="@+id/textViewDestination"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="@string/textView_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewDate"
+        android:layout_below="@+id/editTextPrice"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="@string/buttonPublish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextHeure"
+        android:layout_marginTop="24dp"
+        android:id="@+id/buttonPublier"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

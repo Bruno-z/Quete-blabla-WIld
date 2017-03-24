@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="@string/editText_departure"
+
         android:ems="10"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
@@ -36,7 +36,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="@string/editText_destination"
         android:ems="10"
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"

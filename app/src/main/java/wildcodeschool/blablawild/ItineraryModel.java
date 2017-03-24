@@ -19,7 +19,7 @@ public class ItineraryModel {
 
     }
 
-    public ItineraryModel (int id, String lastName, String firstName, Date date, int price, String departure, String destination){
+    public ItineraryModel ( Date date, int price, String departure, String destination){
 
         mID = 0;
         mLastName = "DuGrenier";
@@ -32,6 +32,7 @@ public class ItineraryModel {
     }
 
     public int getmID() {
+
         return mID;
     }
 
@@ -86,6 +87,8 @@ public class ItineraryModel {
     public void setmDestination(String mDestination) {
         this.mDestination = mDestination;
     }
+
+
 }
 
 

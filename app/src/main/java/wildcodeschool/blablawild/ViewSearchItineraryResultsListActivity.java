@@ -1,104 +1,54 @@
 package wildcodeschool.blablawild;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+import android.database.DataSetObserver;
 import android.os.Bundle;
-import android.widget.Adapter;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class ViewSearchItineraryResultsListActivity extends AppCompatActivity {
-    SearchRequestModel requestModel;
-    ListView listViewSearchResults;
     TripResultAdapter adapter;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
-
+    private DatabaseReference mDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_search_itinerary_results_list);
 
 
+
+       /*
         Intent Resultat = getIntent();
-        SearchRequestModel objet = Resultat.getParcelableExtra(SearchItineraryActivity.EXTRA_OBJET);
+        ItineraryModel objet = Resultat.getParcelableExtra(SearchItineraryActivity.EXTRA_OBJET);
+      */
+        mDatabase = FirebaseDatabase.getInstance().getReference("itineraries");
+        setContentView(R.layout.activity_view_search_itinerary_results_list);
+        ListView MaListe = (ListView) findViewById(R.id.MaListe);
+        adapter = new TripResultAdapter(mDatabase,ViewSearchItineraryResultsListActivity.this,R.layout.trip_item);
 
-        Toast.makeText(this, objet.getDate(), Toast.LENGTH_SHORT).show();
-        this.setTitle(objet.getDepart() + " " + getString(R.string.fleche1) + " " + objet.getDestination());
+        MaListe.setAdapter(adapter);
+
+        // Listview test //
 
 
-        // [...]
-        listViewSearchResults = (ListView) findViewById(R.id.MaListe);
-        ArrayList<TripResultModel> resultModel = new ArrayList<>();
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy-hh:mm");
 
-        try {
-            resultModel.add(new TripResultModel("Bruce", sdf.parse("21/02/2017-15:30"), 15));
-            resultModel.add(new TripResultModel("Clark", sdf.parse("21/02/2017-16:00"), 20));
-            resultModel.add(new TripResultModel("Bary", sdf.parse("21/02/2017-16:30"), 16));
-            resultModel.add(new TripResultModel("Lex", sdf.parse("21/02/2017-17:00"), 40));
-        } catch (ParseException e) {
-        }
-        adapter = new TripResultAdapter(this, resultModel);
-
-        listViewSearchResults.setAdapter(adapter);
-
-        // [...]
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
-
-
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    public Action getIndexApiAction() {
-        Thing object = new Thing.Builder()
-                .setName("ViewSearchItineraryResultsList Page") // TODO: Define a title for the content shown.
-                // TODO: Make sure this auto-generated URL is correct.
-                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
-                .build();
-        return new Action.Builder(Action.TYPE_VIEW)
-                .setObject(object)
-                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
-                .build();
-    }
-
-    @Override
+   /*Override
     public void onStart() {
         super.onStart();
+        // Setup our view and list adapter. Ensure it scrolls to the bottom as data changes
+        final ListView listView = getListView();
+        // Tell our list adapter that we only want 50 messages at a time
+        mChatListAdapter = new ChatListAdapter(mFirebaseRef.limit(50), this, R.layout.chat_message, mUsername);
+        listView.setAdapter(mChatListAdapter);
+        mChatListAdapter.registerDataSetObserver(new DataSetObserver() {
+            @Override
+            public void onChanged() {
+                super.onChanged();
+                listView.setSelection(mChatListAdapter.getCount() - 1); */
+            }
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        AppIndex.AppIndexApi.start(client, getIndexApiAction());
-    }
 
-    @Override
-    public void onStop() {
-        super.onStop();
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.end(client, getIndexApiAction());
-        client.disconnect();
-    }
-}
 
