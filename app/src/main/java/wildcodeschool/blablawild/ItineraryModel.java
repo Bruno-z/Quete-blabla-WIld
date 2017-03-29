@@ -31,6 +31,7 @@ public class ItineraryModel {
 
     }
 
+
     public int getmID() {
 
         return mID;
@@ -88,6 +89,9 @@ public class ItineraryModel {
         this.mDestination = mDestination;
     }
 
+    public static int getcount() {
+        return getcount();
+    }
 
 }
 
