@@ -9,6 +9,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -28,6 +33,8 @@ public class SubmitItineraryActivity extends AppCompatActivity {
     EditText editTextHeure;
     Button buttonPublier;
     Date  myDate;
+    private FirebaseUser firebaseUser;
+
 
 
     @Override
@@ -41,12 +48,18 @@ public class SubmitItineraryActivity extends AppCompatActivity {
         editTextDate = (EditText)findViewById(R.id.editTextDate);
         editTextHeure = (EditText)findViewById(R.id.editTextHeure);
         buttonPublier = (Button)findViewById(R.id.buttonPublier);
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+
+
+
 
         // j'utilise la database de Firebbase et je l'instancie avec un get instance pour la récuperer;
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         //  ce que renvoie une méthode databasereference en utilisant l'objet database
         final DatabaseReference ref = database.getReference("itineraries");
+
         final Intent intent = getIntent();
 
         buttonPublier.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +84,7 @@ public class SubmitItineraryActivity extends AppCompatActivity {
 
                     // nom de ma class d'objet et les getter de ces objet avec un getText.tostring
                     ItineraryModel objet;
-                    objet = new ItineraryModel(myDate,  price, (editTextDepart.getText().toString()),(editTextDestination.getText().toString()));
+                    objet = new ItineraryModel(firebaseUser.getUid() , myDate,  price, (editTextDepart.getText().toString()),(editTextDestination.getText().toString()),firebaseUser.getDisplayName());
 
 
                     // ref= base de donné firebase et je push mon objet

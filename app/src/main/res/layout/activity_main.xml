@@ -21,7 +21,8 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/content_main"
+        android:id="@+id/include" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -38,5 +39,14 @@
         android:id="@+id/Trajet"
         app:layout_anchorGravity="top|center_horizontal"
         android:layout_gravity="bottom|center_horizontal" />
+
+    <Button
+        android:id="@+id/buttonAuth"
+        android:layout_width="234dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="Authentification"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="top|center_horizontal" />
 
 </android.support.design.widget.CoordinatorLayout>

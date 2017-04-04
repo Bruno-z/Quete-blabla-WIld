@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         });
         Button button = (Button) findViewById(R.id.button);
         Button Trajet = (Button) findViewById(R.id.Trajet);
+        Button buttonAuth = (Button)findViewById(R.id.buttonAuth);
 
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -53,8 +54,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent trajet = new Intent(MainActivity.this,SubmitItineraryActivity.class);
+                Intent trajet = new Intent(MainActivity.this, SubmitItineraryActivity.class);
                 startActivity(trajet);
+            }
+        });
+
+        buttonAuth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent auth = new Intent(MainActivity.this, AccountActivity.class);
+                startActivity(auth);
+
             }
         });
         };

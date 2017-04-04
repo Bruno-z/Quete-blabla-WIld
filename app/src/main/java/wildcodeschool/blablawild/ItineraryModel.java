@@ -7,39 +7,50 @@ import java.util.Date;
  */
 
 public class ItineraryModel {
-    private int mID;
+    private String muserID;
     private String mLastName;
     private String mFirstName;
     private Date mDate;
     private int mPrice;
     private String mDeparture;
     private String mDestination;
+    private String mDisplayName;
+
 
     private ItineraryModel() {
 
     }
 
-    public ItineraryModel ( Date date, int price, String departure, String destination){
+    public ItineraryModel ( String userID, Date date, int price, String departure, String destination, String displayname ){
 
-        mID = 0;
+        muserID = userID;
         mLastName = "DuGrenier";
         mFirstName = "Joeur";
         mDate = date;
         mPrice = price;
         mDeparture = departure;
         mDestination = destination;
+        mDisplayName = displayname;
 
     }
 
 
-    public int getmID() {
-
-        return mID;
+    public String getmDisplayName() {
+        return mDisplayName;
     }
 
-    public void setmID(int mID) {
-        this.mID = mID;
+    public void setmDisplayName(String mDisplayName) {
+        this.mDisplayName = mDisplayName;
     }
+
+    public String getMuserID() {
+        return muserID;
+    }
+
+    public void setMuserID(String muserID) {
+        this.muserID = muserID;
+    }
+
 
     public String getmDeparture() {
         return mDeparture;
