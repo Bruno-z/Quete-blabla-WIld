@@ -84,6 +84,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                                 Toast.makeText(SignupActivity.this, "Registration Error", Toast.LENGTH_LONG).show();
                                 progressDialog.setMessage("Registering Please Wait...");
                                 progressDialog.show();
+                                progressDialog.cancel();
 
 
 

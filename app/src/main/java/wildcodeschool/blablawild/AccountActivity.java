@@ -83,8 +83,6 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
             firebaseAuth.signOut();
             //closing activity
             finish();
-            //starting login activity
-            startActivity(new Intent(this, SigninActivity.class));
         }
     }
 
